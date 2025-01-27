@@ -12,16 +12,17 @@ function App() {
   return (
     <>
       <Navbar />
-
-      <div className="container-xl position-relative" style={{ marginTop  : "10px" ,marginBottom : "10px" }}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/product" element={<Product />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </div>
+      <div className="container-xl d-grid min-vh-100" style={{ gridTemplateRows: "auto 1fr auto" }}>
+        <div className="d-flex justify-content-center align-items-center" style={{ marginTop: "10px", marginBottom: "10px" }}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product" element={<Product />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </div>
+      </div >
       <Footer />
     </>
   )
