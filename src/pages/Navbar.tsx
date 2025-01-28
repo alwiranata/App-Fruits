@@ -11,7 +11,7 @@ const Navbar = () => {
                     <a className="navbar-brand" href="#">
                         <img src="/fruit.png" alt="Not File" width="30" height="24" />
                     </a>
-
+                    
                     {/* Button Toggle for Mobile View */}
                     <button 
                         className="navbar-toggler" 

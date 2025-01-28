@@ -1,3 +1,5 @@
+import { useCard } from "../hooks/useCard"
+
 type CardProps = {
     src?: string,
     name?: string
@@ -10,10 +12,10 @@ const Card = (props: CardProps) => {
     const {
         src = "Not File",
         name = "Fruit",
-        price = 0,
         view = "View"
-
     } = props
+
+    const {handleClick} = useCard({view})
 
     return (
         <div className="card" style={{ width: "18rem" }}>
@@ -21,7 +23,7 @@ const Card = (props: CardProps) => {
             <div className="card-body">
                 <h5 className="card-title fw-bold text-secondary-emphasis">Fruit: {name}</h5>
                 <div className="mt-auto">
-                    <a href="#" className="btn btn-primary w-100">{view}</a>
+                    <button onClick={handleClick} className="btn btn-primary w-100">{view}</button>
                 </div>
             </div>
         </div>
