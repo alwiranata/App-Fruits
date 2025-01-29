@@ -3,12 +3,11 @@ import { useCard } from "../hooks/useCard"
 type CardProps = {
     src?: string,
     name?: string
-    price?: number
     view?: string
 }
 
 const Card = (props: CardProps) => {
-
+    
     const {
         src = "Not File",
         name = "Fruit",

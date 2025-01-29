@@ -6,6 +6,7 @@ import Contact from "./pages/Contact"
 import NotFound from "./pages/NotFound"
 import Navbar from "./pages/Navbar"
 import Footer from "./pages/Footer"
+import ProductDetail from "./pages/ProductDetail"
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/product" element={<Product />} />
+            <Route path="/product/detail" element={<ProductDetail/>}></Route>
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />

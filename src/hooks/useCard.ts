@@ -4,11 +4,13 @@ type useCard = {
     view? : string
 }
 
-export const useCard = (props : useCard) => {
+export const useCard = ({view} : useCard) => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate(`/product/detail?name=${props.view}`);
+        if(view){
+            navigate(`/product/detail?name=${view}`);
+        }
     };
 
     return {
