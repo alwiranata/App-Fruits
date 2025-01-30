@@ -1,18 +1,15 @@
 import { useSearchParams, useNavigate } from "react-router";
 import { products, ProductType } from "../data/product";
+import Product1 from "../components/Product";
 
 const ProductDetail = () => {
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
-
     const productName = searchParams.get("name") || "";
     const product: ProductType | undefined = products.find((p) => p.name.toLowerCase() === productName.toLowerCase());
 
-    const handleBuy = () => {
-        if (product) {
-            alert(`🎉 Thank you for purchasing ${product.name}!`);
-        }
-    };
+
+
 
     return (
         <div className="container py-5">
@@ -31,21 +28,22 @@ const ProductDetail = () => {
                     {/* Kolom Informasi Produk */}
                     <div className="col-md-7">
                         <div className="product-info ps-md-4">
-                            <h2 className="display-5 fw-bold text-success mb-3">{product.name}</h2>
+                            <h2 className="display-5 fw-bold text-secondary-emphasis mb-3">{product.name}</h2>
                             <p className="text-muted">{product.description}</p>
-                            <p className="fw-bold fs-4 text-success">Rp {product.price.toLocaleString()}</p>
+                            <p className="fw-bold fs-4 text-secondary-emphasis">Rp {product.price.toLocaleString()}</p>
+                            <p className=""><Product1 /></p>
                             <div className="mt-4">
                                 <button 
-                                    onClick={handleBuy} 
-                                    className="btn btn-success w-100 fw-bold shadow-sm"
+                                   
+                                    className="btn btn-primary text-light w-100 fw-bold shadow-sm"
                                 >
-                                    🛍️ Buy Now
+                                     Buy Now
                                 </button>
                                 <button 
                                     onClick={() => navigate(-1)} 
                                     className="btn btn-outline-secondary w-100 mt-2 shadow-sm"
                                 >
-                                    ⬅️ Back to Products
+                                     Back to Products
                                 </button>
                             </div>
                         </div>
@@ -59,7 +57,7 @@ const ProductDetail = () => {
                         onClick={() => navigate(-1)} 
                         className="btn btn-primary shadow-sm fw-bold"
                     >
-                        ⬅️ Back to Products
+                         Back to Products
                     </button>
                 </div>
             )}

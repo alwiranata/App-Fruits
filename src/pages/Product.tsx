@@ -1,6 +1,8 @@
 import Card from "../components/Card";
 import { products } from "../data/product";
 
+
+
 const Product = () => {
     return (
         <div className="row">

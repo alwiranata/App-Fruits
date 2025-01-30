@@ -9,4 +9,3 @@ export const products = [
 ];
 
 export type ProductType = typeof products[number]; 
-console.log(products)

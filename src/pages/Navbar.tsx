@@ -37,7 +37,7 @@ const Navbar = () => {
                             </li>
                             <li className="nav-item">
                                 <Link 
-                                    className={`nav-link ${location.pathname === "/product" ? "text-warning fw-bold" : ""}`} 
+                                    className={`nav-link ${location.pathname === "/product" || location.pathname === "/product/detail" ? "text-warning fw-bold" : ""}`} 
                                     to="/product"
                                 >
                                     Product
