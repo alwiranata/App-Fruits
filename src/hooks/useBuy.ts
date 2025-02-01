@@ -2,14 +2,15 @@ import { useState } from "react"
 
 type Buy = {
     price? : number
+    quantity? : number
 }
 
-const useBuy = () =>{
+export const useBuy = () =>{
     const [buy, setBuy] = useState(0)
 
     const handleBuy = (props : Buy) => {
-        if (props.price) {
-            setBuy(props.price);  // Menambahkan harga baru ke buy
+        if (props.price && props.quantity) {
+            setBuy(props.price * props.quantity);  // Menambahkan harga baru ke buy
         }
     }
 
@@ -18,3 +19,4 @@ const useBuy = () =>{
         handleBuy
     }
 }
+

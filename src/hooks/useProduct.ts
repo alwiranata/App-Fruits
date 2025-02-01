@@ -1,29 +1,23 @@
 import { useState } from "react";
 
 export const useProduct = () => {
-    const [product, setProduct] = useState(0);
+    const [quantity, setProduct] = useState(0);
 
     const handleIncrement = () => {
-        setProduct(product + 1);
+        setProduct(quantity + 1);
     };
 
     const handleDecrement = () => {
-        if (product > 0) {
-            setProduct(product - 1);
+        if (quantity > 0) {
+            setProduct(quantity - 1);
         }
     };
 
 
-    const handleBuy = () => {
-        if (product) {
-            alert(`🎉 Thank you for purchasing ${product}!`);
-        }
-    };
 
     return {
-        product,
+        quantity,
         handleIncrement,
         handleDecrement,
-        handleBuy
     };
 };

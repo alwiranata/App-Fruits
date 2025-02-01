@@ -1,7 +1,6 @@
 import { useSearchParams, useNavigate } from "react-router";
 import { products, ProductType } from "../data/product";
-import Product1 from "../components/Product";
-
+import Buy from "../components/Buy";
 const ProductDetail = () => {
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
@@ -31,21 +30,7 @@ const ProductDetail = () => {
                             <h2 className="display-5 fw-bold text-secondary-emphasis mb-3">{product.name}</h2>
                             <p className="text-muted">{product.description}</p>
                             <p className="fw-bold fs-4 text-secondary-emphasis">Rp {product.price.toLocaleString()}</p>
-                            <p className=""><Product1 /></p>
-                            <div className="mt-4">
-                                <button 
-                                   
-                                    className="btn btn-primary text-light w-100 fw-bold shadow-sm"
-                                >
-                                     Buy Now
-                                </button>
-                                <button 
-                                    onClick={() => navigate(-1)} 
-                                    className="btn btn-outline-secondary w-100 mt-2 shadow-sm"
-                                >
-                                     Back to Products
-                                </button>
-                            </div>
+                            <Buy price={product.price}/>
                         </div>
                     </div>
                 </div>
